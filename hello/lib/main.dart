@@ -16,14 +16,10 @@ class MyApp extends StatelessWidget{
                );
     Center center = Center(
           child: Container(
-            alignment: Alignment.bottomLeft,
-            width: 500,
-            height: 400,
-            // color: Colors.lightBlue,
-            decoration: boxDecoration ,
-            padding: const EdgeInsets.fromLTRB(55.0, 00, 0, 0),
-            margin: const EdgeInsets.all(10),
-            child: ctntxt,
+            width: 400,
+            height: 300,
+            color: Colors.lightBlue ,
+            child: Image.network('https://picsum.photos/200', fit: BoxFit.fitHeight)
           ) 
           
         );
