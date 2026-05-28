@@ -11,24 +11,24 @@ class MyApp extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'jspang demos24',
+      title: 'jspang demos245',
       home: Scaffold(
         appBar: AppBar(title: Text('ListView')),
-        body: GridView.count(
-          padding: const EdgeInsets.all(20.0),
-          crossAxisSpacing: 10.0, 
-          crossAxisCount: 3,
+        body: GridView(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3, mainAxisSpacing: 2.0, crossAxisSpacing: 2.0, childAspectRatio: 0.67
+          ),
           children: [
-            const Text('data 1'), 
-            const Text('data 2' ), 
-            const Text('data 3'), 
-            const Text('data 4'), 
-            const Text('data 5'), 
-            const Text('data 6'), 
-            const Text('data 7'),
-            const Text('data a') 
-            ],
-        )
+            Image.network('https://picsum.photos/id/230/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/240/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/140/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/152/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/160/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/170/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/180/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/190/200/300', fit: BoxFit.cover,),
+            Image.network('https://picsum.photos/id/250/200/300', fit: BoxFit.cover,)
+          ],
+          )
       ),
     );
   }
