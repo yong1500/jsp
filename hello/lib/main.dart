@@ -3,29 +3,35 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 
+// ignore: must_be_immutable
 class MyApp extends StatelessWidget{
-  String txtbody = 'hel4lo 234  f4 love front and fights 100 courses graduits, yes youare right, we hahha ,dfhg d,gd  need to continues';
   @override
   Widget build(BuildContext context) {
+    String txtbody = '----8hel4lo234lovefrontandfights100coursesgraduitsyesyouarerightwehahhadfhgdgdneedtocontinues';
+    Text ctntxt = Text( txtbody + txtbody + txtbody + txtbody, style: TextStyle(fontSize: 40)  );
+    BoxDecoration boxDecoration = BoxDecoration(
+      gradient: const LinearGradient(
+        colors: [Colors.lightBlue, Colors.greenAccent, Colors.purple]),
+      border: Border.all(width: 5, color: Colors.yellow)  
+               );
+    Center center = Center(
+          child: Container(
+            alignment: Alignment.bottomLeft,
+            width: 500,
+            height: 400,
+            // color: Colors.lightBlue,
+            decoration: boxDecoration ,
+            padding: const EdgeInsets.fromLTRB(55.0, 00, 0, 0),
+            margin: const EdgeInsets.all(10),
+            child: ctntxt,
+          ) 
+          
+        );
     return MaterialApp( 
       title: 'welcome to flutter',
       home: Scaffold(
         // appBar: AppBar( title: Text('welcome again')),
-        body: Center(
-          child: Text(
-            txtbody + txtbody + txtbody + txtbody,          
-            textAlign: TextAlign.end,
-            maxLines: 2,
-            overflow: TextOverflow.fade,
-            style: TextStyle(
-              fontSize: 25.0,
-              color: Color.fromARGB(255, 255, 125, 125),
-              decoration: TextDecoration.underline,
-              decorationStyle: TextDecorationStyle.solid,
-
-              )              
-          )          
-        )
+        body: center
       )
     );
   }
