@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget{
             width: 400,
             height: 300,
             color: Colors.lightBlue ,
-            child: Image.network('https://picsum.photos/200', fit: BoxFit.fitHeight)
+            child: Image.network('https://picsum.photos/id/7/200/300', repeat: ImageRepeat.repeatY)
+            
           ) 
           
         );
