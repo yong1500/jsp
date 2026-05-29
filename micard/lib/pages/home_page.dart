@@ -17,16 +17,21 @@ class _HomePageState extends State<HomePage> {
           children: [
             Container(
               height: 200,
+              color: Colors.white,
               child: Swiper(
-                itemBuilder: (BuildContext context, int index) {
-                  return Image.network(
-                    "https://picsum.photos/250?image=$index",
-                    fit: BoxFit.fill,
-                  );
-                },
-                itemCount: 10,
+                indicatorLayout: PageIndicatorLayout.COLOR,
+                autoplay: true,
                 pagination: const SwiperPagination(),
                 control: const SwiperControl(),
+                itemCount: 3,
+                itemBuilder: (context, index) {
+                  return Container(
+                    color: Colors.lightBlue,
+                    height: 150,
+                    margin: EdgeInsets.all(0),
+
+                  );
+                },
               ),
             ),
             // Text('Home Page'),
