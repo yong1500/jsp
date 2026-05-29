@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,8 +15,16 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            // Swiper()
-            Text('Home Page'),
+            Swiper(
+              itemCount: 3, 
+              itemBuilder: (context, index) {
+                return Container(
+                  height: 200,
+                  color: Colors.red,
+
+              );
+            }),
+            // Text('Home Page'),
           ],
         ),
       )
