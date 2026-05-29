@@ -63,15 +63,22 @@ class _HomePageState extends State<HomePage> {
           //the first row, avatar, author, date, top4
           Row(children: [
       
-            Image.network('https://plus.unsplash.com/premium_photo-1666672388644-2d99f3feb9f1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-            width: 30,           height: 30,           fit: BoxFit.cover, ),
-            Text('Author', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),),
+            ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: 
+              Image.network('https://plus.unsplash.com/premium_photo-1666672388644-2d99f3feb9f1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                width: 50,           height: 50,           fit: BoxFit.cover, ),
+            ),
+            Text('Author', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blue),),
             Expanded(child: SizedBox()),
-            Text('2026-01-01', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-            Text('Top4', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold),)
+            Text('2026-01-02', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),),
+            Text('Top4', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.green),)
           ],),
           //the second row, title
-          Text('3TitleTitleTitleTitleTitleTitleTitleTitleTitle'),
+          Text(
+            '3TitleTitleTitleTitleTitleTitleTitleTitleTitle', 
+            style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
           //the third row, content picture
           Row(
             children: [
