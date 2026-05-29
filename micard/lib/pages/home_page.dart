@@ -72,7 +72,7 @@ class _HomePageState extends State<HomePage> {
             Text('Author', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blue),),
             Expanded(child: SizedBox()),
             Text('2026-01-02', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),),
-            Text('Top4', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.green),)
+            Text('Top5', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.green),)
           ],),
           //the second row, title
           Text(
