@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:micard/pages/web_view_page.dart';
+import 'package:micard/route/routes.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -101,7 +102,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onTapMain() {
-    Navigator.push(context, MaterialPageRoute(builder: (context) => WebViewPage(title: "from main", time: 'abc')));
+
+    Navigator.pushNamed(context, RoutePath.webViewPage); 
+    /*
+    Navigator.push(
+      context, 
+      MaterialPageRoute(builder: (context) => WebViewPage(title: "from main", time: 'abc')));
+      */
   }
 
 
