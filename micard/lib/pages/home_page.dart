@@ -15,7 +15,21 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            Text('Home Page'),
+            Container(
+              height: 200,
+              child: Swiper(
+                itemBuilder: (BuildContext context, int index) {
+                  return Image.network(
+                    "https://picsum.photos/250?image=$index",
+                    fit: BoxFit.fill,
+                  );
+                },
+                itemCount: 10,
+                pagination: const SwiperPagination(),
+                control: const SwiperControl(),
+              ),
+            ),
+            // Text('Home Page'),
           ],
         ),
       )
