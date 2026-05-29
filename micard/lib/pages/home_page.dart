@@ -15,16 +15,7 @@ class _HomePageState extends State<HomePage> {
       body: SafeArea(
         child: Column(
           children: [
-            Swiper(
-              itemCount: 3, 
-              itemBuilder: (context, index) {
-                return Container(
-                  height: 200,
-                  color: Colors.red,
-
-              );
-            }),
-            // Text('Home Page'),
+            Text('Home Page'),
           ],
         ),
       )
