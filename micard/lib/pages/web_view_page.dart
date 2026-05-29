@@ -22,9 +22,19 @@ class _WebViewPageState extends State<WebViewPage> {
       body: Container(
         color: Colors.white,
         child: Center(
-          child: Text("WebViewPage  ${widget.title} at ${widget.time}" ),
+          child: InkWell(
+            onTap: () {
+              onTapWebView();
+            },
+            child: Text("return back to main"),
+          ),      
+
         ),
       ),
     );
+  }
+
+  void onTapWebView() {
+    Navigator.pop(context);
   }
 }
