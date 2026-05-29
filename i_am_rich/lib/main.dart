@@ -7,13 +7,13 @@ void main() {
         Scaffold(
           backgroundColor: Colors.blueGrey,
           appBar: AppBar(
-            title: Text('I am rich'),
+            title: Text('I am rich2'),
             backgroundColor: Colors.blue,
             centerTitle: true,
           ),
           body: Center(
             child: Image(
-              image: AssetImage('images/tree.jpg'),
+              image: AssetImage('images/tree2.jpg'),
             ),
           ),
         ),
