@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
+import 'package:micard/datas/home_banner_data.dart';
+import 'package:micard/pages/home/home_vm.dart';
 import 'package:micard/route/routes.dart';
 
 import '../../route/route_utils.dart';
@@ -12,6 +14,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  List<BannerItemData>? bannerList;
+  @override
+  initState() {
+    super.initState();
+    HomeViewModel.getBanner();
+    print('HomePage initState');
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,12 +43,13 @@ class _HomePageState extends State<HomePage> {
               autoplay: true,
               pagination: const SwiperPagination(),
               control: const SwiperControl(),
-              itemCount: 3,
+              itemCount: bannerList?.length ?? 0,
               itemBuilder: (context, index) {
                 return Container(
                   color: Colors.lightBlue,
                   height: 150,
                   margin: EdgeInsets.all(0),
+                  child: Image.network(bannerList?[index].imagePath ?? '', fit: BoxFit.cover,),
                 );
               },
             ),
@@ -107,7 +119,17 @@ class _HomePageState extends State<HomePage> {
   }
 
   void onTapMain() {
+    initBannerData();
+    print('onTapMains');
     RouteUtils.pushForNamed(context, RoutePath.webViewPage, arguments: { 'name': 'dark6'});
+  }
+
+  void initBannerData() async {
+         bannerList = await HomeViewModel.getBanner();
+         setState(() {
+           
+         });
+         print('bannerList3s: ${bannerList?.length }');
   }
 
 

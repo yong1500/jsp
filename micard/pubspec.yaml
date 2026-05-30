@@ -10,6 +10,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_swiper_view: ^1.1.8
+  dio: ^5.9.2
 
 dev_dependencies:
   flutter_test:
