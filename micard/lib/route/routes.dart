@@ -7,10 +7,10 @@ class Routes{
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RoutePath.home:
-        return pageRoute(HomePage());
+        return pageRoute(HomePage(), settings: settings);
         // default:
       case  RoutePath.webViewPage:
-        return pageRoute(WebViewPage(title: "from main", time: 'abc'));
+        return pageRoute(WebViewPage(title: "from main", time: 'abc'), settings: settings);
       // default:
       //   return MaterialPageRoute(builder: (_) => HomePage());
     }

@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 
 
 class WebViewPage extends StatefulWidget {
-  final String title;
-  final String time;
-  const WebViewPage({super.key, required this.title, required this.time});
+  String? title;
+  String? time;
+  WebViewPage({super.key, required this.title, required this.time});
 
   @override
   State<WebViewPage> createState() => _WebViewPageState();
@@ -13,11 +13,32 @@ class WebViewPage extends StatefulWidget {
 
 
 class _WebViewPageState extends State<WebViewPage> {  
+
+
+  String? name;
+
+  @override
+  void initState() {
+    super.initState();
+
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+      var args = ModalRoute.of(context)?.settings.arguments;
+      if (args != null) { 
+        if(args is Map) {
+          name = args['name'];
+          setState(() {
+          });
+        }
+      }
+
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("WebViewPage ${widget.title}"),
+        title: Text("WebViewPage ${widget.title} $name"),
       ),
       body: Container(
         color: Colors.white,
@@ -26,7 +47,7 @@ class _WebViewPageState extends State<WebViewPage> {
             onTap: () {
               onTapWebView();
             },
-            child: Text("return back to main"),
+            child: Text("return back to main3"),
           ),      
 
         ),

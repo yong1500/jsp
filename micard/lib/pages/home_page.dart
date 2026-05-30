@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
-import 'package:micard/pages/web_view_page.dart';
 import 'package:micard/route/routes.dart';
+
+import '../route/route_utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -75,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                 Image.network('https://plus.unsplash.com/premium_photo-1666672388644-2d99f3feb9f1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
                   width: 50,           height: 50,           fit: BoxFit.cover, ),
               ),
-              Text('Au3', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blue),),
+              Text('Au4', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: Colors.blue),),
               Expanded(child: SizedBox()),
               Text('2026-01-02', style: TextStyle(fontSize: 16, fontWeight: FontWeight.w800),),
               Text('Top5', style: TextStyle(fontSize: 12, fontWeight: FontWeight.w500, color: Colors.green),)
@@ -103,7 +104,9 @@ class _HomePageState extends State<HomePage> {
 
   void onTapMain() {
 
-    Navigator.pushNamed(context, RoutePath.webViewPage); 
+    Map<String, String> aug = { 'name': 'dark'};
+    // Navigator.pushNamed(context, RoutePath.webViewPage); 
+    RouteUtils.pushForNamed(context, RoutePath.webViewPage, arguments: aug);
     /*
     Navigator.push(
       context, 
