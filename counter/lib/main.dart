@@ -32,10 +32,11 @@ class HomePage extends StatefulWidget {
 
 class  _HomePageState extends State<HomePage> {
 
-
+  final _words = <WordPair>[];
 
   @override
   Widget build(BuildContext context) {
+    _words.addAll(generateWordPairs().take(10));
     return Scaffold(
         appBar: AppBar(
           title: const Text('aixinpeidui8', textAlign: TextAlign.center),
@@ -44,10 +45,24 @@ class  _HomePageState extends State<HomePage> {
       );
   }
 
-  Center _buildList() {
-    return Center(child: Text(
-        generateWordPairs().first.asCamelCase
-       ));
+  Widget _buildList() {
+    return ListView.builder(
+      itemBuilder: (context, item) {
+
+        if (item.isOdd) return const Divider();
+        final index = item ~/ 2;
+        if (index >= _words.length) {
+          _words.addAll(generateWordPairs().take(10));
+        }
+
+        return ListTile(
+          title: Text( _words[index].asCamelCase ),
+        );
+      },
+    )
+    
+    
+    ;
   }
 }
 
