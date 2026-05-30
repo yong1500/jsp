@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 import 'package:micard/route/routes.dart';
 
-import '../route/route_utils.dart';
+import '../../route/route_utils.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

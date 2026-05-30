@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:micard/pages/home_page.dart';
+import 'package:micard/pages/home/home_page.dart';
 import 'package:micard/pages/web_view_page.dart';
 
 class Routes{
