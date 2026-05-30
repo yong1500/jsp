@@ -39,7 +39,7 @@ class  _HomePageState extends State<HomePage> {
     _words.addAll(generateWordPairs().take(10));
     return Scaffold(
         appBar: AppBar(
-          title: const Text('aixinpeidui8', textAlign: TextAlign.center),
+          title: const Text('aixinpeidui1', textAlign: TextAlign.center),
         ),
         body: _buildList(),
       );
@@ -55,14 +55,15 @@ class  _HomePageState extends State<HomePage> {
           _words.addAll(generateWordPairs().take(10));
         }
 
-        return ListTile(
-          title: Text( _words[index].asCamelCase ),
-        );
+        return _buildRow(index);
       },
-    )
-    
-    
-    ;
+    );
+  }
+
+  ListTile _buildRow(int index) {
+    return ListTile(
+        title: Text( _words[index].asCamelCase ),
+      );
   }
 }
 
