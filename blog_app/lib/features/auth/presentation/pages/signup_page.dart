@@ -21,7 +21,7 @@ class _SignUpPageState extends State<SignUpPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("Signup Page2"),
+            const Text("2 "),
             AuthField(
               hintText: "Username",
               controller: TextEditingController(),
