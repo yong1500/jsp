@@ -1,17 +1,17 @@
-import 'package:blog_app/features/auth/presentation/pages/login_page.dart';
+import 'package:blog_app/features/auth/presentation/pages/signup_page.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
 
-class SignUpPage extends StatefulWidget {
-  static route() => MaterialPageRoute(builder: (context) => const SignUpPage());
-  const SignUpPage({super.key});
+class LoginPage extends StatefulWidget {
+  static route() => MaterialPageRoute(builder: (context) => const LoginPage());
+  const LoginPage({super.key});
 
   @override
-  State<SignUpPage> createState() => _SignUpPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignUpPageState extends State<SignUpPage> {
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final nameController = TextEditingController();
@@ -31,7 +31,7 @@ class _SignUpPageState extends State<SignUpPage> {
     // formKey.currentState?.validate();
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Signup"),
+        title: const Text("Login"),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -41,10 +41,6 @@ class _SignUpPageState extends State<SignUpPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text("5 "),
-              AuthField(
-                hintText: "Name",
-                controller: nameController,
-              ),
               const SizedBox(height: 30),
               AuthField(
                 hintText: "Email",
@@ -57,21 +53,22 @@ class _SignUpPageState extends State<SignUpPage> {
                 isObscureText: true,
               ),
               const SizedBox(height: 15),
-              AuthGradientButton(buttonText: 'Signup', onPressed: (){}),
+              AuthGradientButton(buttonText: 'Login', onPressed: (){}),
           
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, LoginPage.route());
+                  // Navigator.push(context, MaterialPageRoute(builder: (context) => const SignUpPage()));
+                  Navigator.push(context, SignUpPage.route());
                 },
                 child: RichText(
                   text: TextSpan(
-                    text: 'I\'am have an account? ',
+                    text: 'I do\'not have an account? 5 ',
                     style: const TextStyle(
                       color: Colors.black,
                     ),
                     children: [
                       TextSpan(
-                        text: "Login",
+                        text: "Signup",
                         style: const TextStyle(
                           color: Colors.blue,
                         ),
