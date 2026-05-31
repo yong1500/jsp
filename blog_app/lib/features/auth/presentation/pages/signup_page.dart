@@ -1,3 +1,5 @@
+import 'package:blog_app/features/auth/presentation/widgets/auth_field.dart';
+import 'package:blog_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
 
 class SignUpPage extends StatefulWidget {
@@ -14,21 +16,31 @@ class _SignUpPageState extends State<SignUpPage> {
       appBar: AppBar(
         title: const Text("Signup"),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          TextFormField(
-            decoration: const InputDecoration(
-              label: Text("Email"),
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("Signup Page2"),
+            AuthField(
+              hintText: "Username",
+              controller: TextEditingController(),
             ),
-          ),
-          TextFormField(
-            decoration: const InputDecoration(
-              label: Text("Password"),
+            const SizedBox(height: 30),
+            AuthField(
+              hintText: "Email",
+              controller: TextEditingController(),
             ),
-          ),
-          ElevatedButton(onPressed: () {}, child: const Text("Signup"))
-        ],
+            const SizedBox(height: 30),
+            AuthField(
+              hintText: "Password",
+              controller: TextEditingController(),
+              isObscureText: true,
+            ),
+            const SizedBox(height: 15),
+            AuthGradientButton(buttonText: 'Signup', onPressed: (){})
+          ],
+        ),
       )
     );
   }
