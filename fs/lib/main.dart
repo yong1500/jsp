@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:fluro/fluro.dart';
 import './config/index.dart';
 import './providers/current_index_provider.dart';
 import './pages/index_page.dart';
